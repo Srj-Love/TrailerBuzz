@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    style="@style/text_view_trailer"
+                    android:layout_width="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:layout_height="wrap_content"
+                    android:text="@string/author_label"
+                    tools:ignore="RelativeOverlap" />
+
+                <TextView
+                    android:id="@+id/tv_reviews_author"
+                    style="@style/text_view_in_movie_detail"
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    tools:text="Suraj"
+                    tools:ignore="RelativeOverlap" />
+                <!-- &lt;!&ndash; tools:text="Suraj"  for checking -->
+
+                <ImageView
+                    android:id="@+id/iv_arrow_drop_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/image"
+                    app:srcCompat="@drawable/ic_arrow_drop_up_black_24dp" />
+            </RelativeLayout>
+
+            <!--refering from: https://github.com/AAkira/ExpandableLayout-->
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/expandable_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_nimation"
+                android:padding="8dp"
+                app:ael_duration="400"
+                app:ael_interpolator="accelerateDecelerate"
+                app:ael_orientation="vertical"
+                app:expanded="false">
+
+                <TextView
+                    android:id="@+id/tv_expandable_layout"
+                    style="@style/text_view_review_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:text="Expandable Layout provides an easy way to create a view called header with an expandable view. Views are external layout to allow a maximum of customization." />
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

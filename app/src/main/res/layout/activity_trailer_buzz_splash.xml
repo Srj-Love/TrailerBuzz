@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context="com.srjlove.trailerbuzz.activities.TrailerBuzzSplashActivity">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/ken_burns_images"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_splash"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="106dp"
+        android:src="@drawable/trailer_buzz" />
+
+
+    <TextView
+        android:id="@+id/tv_tb"
+        style="@style/text_view_in_movie_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_splash"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:visibility="visible"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <Button
+        android:id="@+id/btn_enter"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/iv_splash"
+        android:layout_alignRight="@id/iv_splash"
+        android:layout_below="@id/tv_tb"
+        android:layout_marginTop="8dp"
+        android:fontFamily="cursive"
+        android:onClick="enterToMainActivity"
+        android:text="@string/splash_button_enter"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

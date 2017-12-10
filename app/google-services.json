@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "48145760605",
+    "firebase_url": "https://trailerbuzz-d9697.firebaseio.com",
+    "project_id": "trailerbuzz-d9697",
+    "storage_bucket": "trailerbuzz-d9697.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48145760605:android:aee65145a1b801ac",
+        "android_client_info": {
+          "package_name": "com.srjlove.trailerbuzz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48145760605-ffiemg6i7s9v8d2quahgbsodcdjg2b4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.srjlove.trailerbuzz",
+            "certificate_hash": "2a4d9120644f3604e8e300de3f2fa8d1f3836791"
+          }
+        },
+        {
+          "client_id": "48145760605-7g2pn03fmoqkr5u8kua79cops9hq7bcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWD6PjZ7wA4-41HPAcgFpOsCdwRTFTl7s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48145760605-7g2pn03fmoqkr5u8kua79cops9hq7bcj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

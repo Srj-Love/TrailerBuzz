@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<item-->
+        <!--android:id="@+id/popular"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/popular"-->
+        <!--android:title="@string/Poppular"-->
+        <!--app:showAsAction="ifRoom" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/top_rated"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/trending"-->
+        <!--android:title="@string/top_rated"-->
+        <!--app:showAsAction="ifRoom" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/favorites"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/fav"-->
+        <!--android:title="@string/fav"-->
+        <!--app:showAsAction="ifRoom" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/chat"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/message_text"-->
+        <!--android:title="@string/comment"-->
+        <!--app:showAsAction="ifRoom" />-->
+</menu>

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">TrailerBuzz</string>
+    <string name="Poppular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="fav">Favorites</string>
+    <string name="preference_file_name">Preferences_app</string>
+    <string name="last_selected">Last_Selected</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image">Image</string>
+    <string name="recycler_parcelable">state</string>
+    <string name="movie_id_string">id</string>
+    <string name="THE_MOVIE_DB_API_TOKEN">INSERT_YOUR_OWN_API_KEY_HERE</string>
+    <string name="realsease_date">Realsease Date</string>
+    <string name="trailer">Trailers</string>
+    <string name="review">Review</string>
+    <string name="snackbar_text_no_favourites">No Favourites yet!</string>
+    <string name="no_internet_connection">Opps! No Internet Connection</string>
+    <string name="movie_id_string_parcel">parcelId</string>
+    <string name="author_label">Author</string>
+    <string name="some_thing_wrong">Some thing wrong</string>
+    <string name="splash_button_enter">Enter</string>
+    <string name="comment">Comment</string>
+
+    <!--For Registration, login Chat-->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_password_again">Confirm Password</string>
+    <string name="action_register">Register</string>
+
+    <string name="prompt_msg">Type a message</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_up">Sign up</string>
+    <string name="action_send">Send</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">Password too short or does not match</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="sample_message">Hello!</string>
+    <string name="check_your_email">Check your Inbox for Verification Link</string>
+    <string name="login_email">login_email</string>
+    <string name="msg">messages</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="image_file_path">image_file_path</string>
+    <string name="download_uri">download_uri</string>
+    <string name="r_u_sure_sign_out">Are You Sure wants to Sign Out</string>
+</resources>
