@@ -74,7 +74,7 @@ public class RegistrationFragment extends Fragment {
     private FirebaseAuth mAuth;
     private final int UPLOAD_PIC_REQUEST_CODE = 456;
     private boolean mStoragePermission;
-    private int ACCESSING_PERMISSIONS_REQUEST_CODE = 67;
+    private final int ACCESSING_PERMISSIONS_REQUEST_CODE = 67;
 
     @Nullable
     @Override
@@ -116,11 +116,17 @@ public class RegistrationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: clciked at profile IV");
-                if (!mStoragePermission) {
+                if (mStoragePermission) {
+                    Log.d(TAG, "onClick: permission granted");
                     startActivityForResult(new Intent(Intent.ACTION_PICK).setType("image/*"), UPLOAD_PIC_REQUEST_CODE);
                 } else {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    Log.d(TAG, "onClick: permission denied becouse mStoragePermission =  "+ mStoragePermission);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        Log.d(TAG, "onClick: Device is > = M");
                         verifyStoragePermission();
+                    }else{
+                        Log.d(TAG, "onClick: Device is < M");
+                        startActivityForResult(new Intent(Intent.ACTION_PICK).setType("image/*"), UPLOAD_PIC_REQUEST_CODE);
                     }
                 }
             }
@@ -336,10 +342,28 @@ public class RegistrationFragment extends Fragment {
                 ContextCompat.checkSelfPermission(this.mActivity.getApplicationContext(),
                         permissions[2]) == PackageManager.PERMISSION_GRANTED) {
             mStoragePermission = true; // user has given all the permissions let's navigate to Intent
+            Log.d(TAG, "verifyStoragePermission:  permission granted ");
         } else { // if user denied my request, asking him again for Permissions
             ActivityCompat.requestPermissions(mActivity, permissions, ACCESSING_PERMISSIONS_REQUEST_CODE);
-        }
+            mStoragePermission = false; // user has given all the permissions let's navigate to Intent
 
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case ACCESSING_PERMISSIONS_REQUEST_CODE:
+                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
+                        grantResults[1] == PackageManager.PERMISSION_GRANTED &&
+                        grantResults[2] == PackageManager.PERMISSION_GRANTED){
+                    Log.d(TAG, "onRequestPermissionsResult: Permission Granted");
+                }else{
+                    Log.d(TAG, "onRequestPermissionsResult: permission Denied");
+                }
+
+
+        }
 
     }
 
@@ -481,7 +505,7 @@ public class RegistrationFragment extends Fragment {
         byte[] byteData = baos.toByteArray();
 
         final StorageReference mStorageReference = FirebaseStorage.getInstance().getReference()
-                .child("images/users" + "/" + "/profile_image"+ mBinding.registerEmail.getText().toString()); // repplacing image with new images
+                .child("images/users" + "/" + "/profile_image" + mBinding.registerEmail.getText().toString()); // repplacing image with new images
 
         StorageMetadata metadata = new StorageMetadata.Builder()
                 .setContentType("image/jpeg")
@@ -496,7 +520,7 @@ public class RegistrationFragment extends Fragment {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                Log.d(TAG, "onSuccess: downloadUr l"+downloadUrl);
+                Log.d(TAG, "onSuccess: downloadUr l" + downloadUrl);
 
                 setupDownloadUri(downloadUrl);
 //                Toast.makeText(mActivity, "Stored image on Server" + downloadUrl.getPath(), Toast.LENGTH_SHORT).show();
@@ -515,9 +539,9 @@ public class RegistrationFragment extends Fragment {
     }
 
     private void setupDownloadUri(Uri downloadUrl) {
-            String displayProfile = downloadUrl.toString();
-            SharedPreferences prefs = mActivity.getSharedPreferences(CHAT_PREFS, 0);
-            prefs.edit().putString(getString(R.string.download_uri), displayProfile).apply();
+        String displayProfile = downloadUrl.toString();
+        SharedPreferences prefs = mActivity.getSharedPreferences(CHAT_PREFS, 0);
+        prefs.edit().putString(getString(R.string.download_uri), displayProfile).apply();
     }
 
 }
