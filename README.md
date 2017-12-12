@@ -7,8 +7,8 @@ TrailerBuzz is a mobile based android app that fetches data like popular and top
 
 
 ## Task Included
-* Fetch movies data from [TheMovieDB API][df1].
-* Used [Firebase- AUth, Database & Storage][df2] to store user's data.
+* Fetch movies data from [TheMovieDB API](https://www.themoviedb.org/settings/api)
+* Used [Firebase- AUth, Database & Storage](https://firebase.google.com/docs/android/) to store user's data.
 * Used Adapters and Custom List layouts to populate list views.
 * Allow users to view and play trailers ( either in the youtube app or a web browser).
 * Allow users to read reviews of a selected movie.
@@ -20,8 +20,8 @@ TrailerBuzz is a mobile based android app that fetches data like popular and top
 
 ### Note: Please note that API key is missing from res/value/string, You MUST provide one in order to Run the Code Without Crahses!
 
-Project By Suraj Gupta
-[df1]: <https://www.themoviedb.org/settings/api>
-[df2]: <https://firebase.google.com/>
+  Project By Suraj Gupta
+
+
 
 
